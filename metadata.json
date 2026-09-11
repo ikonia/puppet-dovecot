@@ -29,6 +29,24 @@
     },
     {
       "operatingsystem": "Ubuntu"
+    },
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "10"
+      ]
+    },
+    {
+      "operatingsystem": "Rocky",
+      "operatingsystemrelease": [
+        "10"
+      ]
+    },
+    {
+      "operatingsystem": "AlmaLinux",
+      "operatingsystemrelease": [
+        "10"
+      ]
     }
   ],
   "requirements": [

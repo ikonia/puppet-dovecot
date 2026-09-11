@@ -1,0 +1,16 @@
+---
+# Catches every facts.os.family = 'RedHat' distro (RHEL, Rocky Linux,
+# AlmaLinux, CentOS Stream, Oracle Linux, ...) in one file — no per-distro-
+# name file needed unless a specific distro/release needs to override this
+# (see the 'Operating System Family - Major Release' hierarchy level above
+# this one for that case).
+#
+# RHEL-family packages core+imap+pop3+lmtp+auth into a single 'dovecot' RPM
+# (unlike Debian/Ubuntu's split dovecot-core/-imapd/-pop3d/-lmtpd). This
+# mirrors the class default (['dovecot-core']) as the minimal base install
+# with no optional backends — consumers who need the MySQL/MariaDB SQL
+# driver (dovecot-mysql), PostgreSQL driver (dovecot-pgsql), or Sieve
+# (dovecot-pigeonhole) should add those explicitly via their own
+# dovecot::install::packages.
+dovecot::install::packages:
+  - dovecot

@@ -3,11 +3,16 @@ version: 5
 
 defaults:
   datadir: 'data'
-  data_hash: 'yaml_data'
+  data_hash: yaml_data
 
 hierarchy:
-  - name: 'module dovecot, os-family'
-    path: '%{facts.os.family}-family.yaml'
-
-  - name: 'module dovecot, common'
+  - name: 'Operating System Family - Major Release'
+    paths:
+     # Used to distinguish between Debian and Ubuntu
+      - "%{facts.os.name}/%{facts.os.release.major}.yaml"
+      - "%{facts.os.family}/%{facts.os.release.major}.yaml"
+  - name: 'Operating System Family'
+    paths:
+      - "family/%{facts.os.family}.yaml"
+  - name: 'common'
     path: 'common.yaml'

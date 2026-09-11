@@ -46,4 +46,4 @@ jobs:
         run: |
           podman run -it --rm -v $PWD:/repo:Z ${VOXBOX} fixtures:clean
           podman run -it --rm -v $PWD:/repo:Z ${VOXBOX} fixtures:prep
-          podman run -it --rm -v $PWD:/repo:Z ${VOXBOX} spec
+          podman run -it --rm -e SPEC_FACTS_STRICT=yes -v $PWD:/repo:Z ${VOXBOX} spec
